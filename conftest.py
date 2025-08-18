@@ -10,7 +10,7 @@ def page():
     """Фикстура, создающая браузер и вкладку Playwright."""
     with sync_playwright() as p:
         browser = p.chromium.launch(
-            headless=False,
+            headless=True,
             args=["--incognito"]
         )
         context = browser.new_context(
