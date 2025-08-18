@@ -27,6 +27,10 @@ jobs:
           pip install -r requirements.txt
           npm install -g allure-commandline --save-dev
 
+      - name: Install Playwright browsers
+        run: |
+          python -m playwright install --with-deps
+
       - name: Run tests with pytest and Allure
         run: pytest
 
